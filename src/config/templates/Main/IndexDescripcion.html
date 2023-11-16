@@ -1,0 +1,133 @@
+{% extends "Main/LayoutDescripcion.html" %}
+{% block body %}
+<head>
+    <title>
+        Peliculas - descripcion
+    </title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- APP CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/app.css')}}">
+</head>
+<body>
+  <div class="nav-wrapper">
+    <div class="container">
+        <div class="nav">
+            <a href="#" class="logo">
+                <i class='bx bx-movie-play bx-tada main-color'></i>Pe<span class="main-color">lic</span>ulas
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li id="usuario"><a href="#">Inicio</a></li>
+                <li><a href="IndexAcercaDe">Acerca de</a></li>
+                <li>
+                    <a href="#"  id="user-menu" style="display: none;">
+                        <span id="user-name"></span>
+                        <i class="bx bx-chevron-down"></i>
+                    </a>
+                    <ul class="sub-menu" id="user-submenu">
+                        <li><a href="#" id="logout">Cerrar sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- MENU PARA CELULAR -->
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="hamburger"></div>
+            </div>
+            <!-- fin MENU PARA CELULAR -->
+        </div>
+    </div>
+</div>
+<!-- FIN NAV -->
+<div class="container movie__overview">
+    <div class="container movie__overview-wrapper">
+      <div class="backdrop__container">
+        <img alt="" class="backdrop__image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWMAAE4Uu+oAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=" />
+      </div>
+      <div class="view">
+        <div class="view__wrapper">
+          <div class="view__poster">
+            <img id="imagen" src="{{imagen}}" />
+          </div>
+          <div class="view__details">
+            <h1 id="titlePelis" class="view__title">
+              <span>{{titulo}}</span>
+            </h1>
+            <p class="view__info mb-0">
+              <i class="fa fa-star"></i>&nbsp;8.1&nbsp;&nbsp;
+              <i id="duracion" class="fa fa-clock"></i>&nbsp;{{duracion}}
+            </p>
+            <p id="genero" class="mt-0 text-subtle">
+              <span>{{genero}}</span> 
+              <span></span> 
+              <span></span> 
+              <span></span>
+            </p>
+            <p id="sinopsis" class="view__overview">{{sinopsis}}</p>
+            <div class="view__actions">
+              <button id="Trailer" class="button--primary">
+                <a href="#TrailerShow">Ver Trailer&nbsp;&nbsp;<i class="fa fa-play"></i></a>
+              </button>&nbsp;
+              <button class="button--download" onclick="redirectToIndexAsientos()">
+                <a href="" >Obtener Ticket&nbsp;&nbsp;<i class="fa fa-download"></i></a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="TrailerShow" class="container__wrapper">
+    <div id="main__player">
+      <div class="flex__center watch__title">
+        <h1 class="flex__center">Trailer</h1>
+        <div class="text-center">
+          <option id="" value="" class="rounded"></option>
+        </div>
+      </div>
+      <div id="video" ></div>
+  </div>
+  
+<!-- FOOTER SECTION -->
+<footer class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 col-md-6 col-sm-12">
+                <div class="content">
+                    <a href="#" class="logo">
+                        <i class='bx bx-movie-play bx-tada main-color'></i>Pe<span class="main-color">lic</span>ulas
+                    </a>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut veniam ex quos hic id nobis
+                        beatae earum sapiente! Quod ipsa exercitationem officiis non error illum minima iusto et.
+                        Dolores, quibusdam?
+                    </p>
+                </div>
+            </div>
+            <div class="col-8 col-md-6 col-sm-12">
+                <div class="row">
+                    <div class="col-3 col-md-6 col-sm-6">
+                        <div class="content">
+                            <p><b>Help</b></p>
+                            <ul class="footer-menu">
+                                <li><a href="/acercaDe.html">ACERCA DE NOSOTROS</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="social-list">
+                        <a href="#" onclick="prueba('facebook')" class="social-item">
+                            <i class="bx bxl-facebook"></i>
+                        </a>
+                        <a href="#" class="social-item">
+                            <i class="bx bxl-twitter"></i>
+                        </a>
+                        <a href="#" class="social-item">
+                            <i class="bx bxl-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</footer>
+<!-- END FOOTER SECTION -->
+{% endblock %}
