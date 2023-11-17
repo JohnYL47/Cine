@@ -1,13 +1,12 @@
 from config.db import db, app, ma
 from flask import Blueprint, Flask,  redirect, request, jsonify, json, session, render_template
-routes_asientos = Blueprint("routes_asientos", __name__)
 from Model.Funciones import funciones
 from Model.Asientos import asientos
 from Model.Compras import compras
-from Model.peliculas import peliculas
+from Model.Peliculas import peliculas
 from Model.Salas import salas
 from Model.Usuarios import usuarios
-
+routes_asientos = Blueprint("routes_asientos", __name__)
 
 
 @routes_asientos.route('/indexAsientos', methods=['GET'] )
